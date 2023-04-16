@@ -931,10 +931,10 @@
   var globalOptions = {};
   // 全局事件名
   var ajaxEvents = {
-      ajaxStart: 'http://rcse.top/js/start.mdui.ajax',
-      ajaxSuccess: 'http://rcse.top/js/success.mdui.ajax',
-      ajaxError: 'http://rcse.top/js/error.mdui.ajax',
-      ajaxComplete: 'http://rcse.top/js/complete.mdui.ajax',
+      ajaxStart: 'start.mdui.ajax',
+      ajaxSuccess: 'success.mdui.ajax',
+      ajaxError: 'error.mdui.ajax',
+      ajaxComplete: 'complete.mdui.ajax',
   };
 
   /**
@@ -997,7 +997,7 @@
   ```js
   ajax({
     method: "POST",
-    url: "http://rcse.top/js/some.php",
+    url: "some.php",
     data: { name: "John", location: "Boston" }
   }).then(function( msg ) {
     alert( "Data Saved: " + msg );
@@ -6352,7 +6352,7 @@
               if (eventType === 'mouseover') {
                   if ($submenu.length) {
                       // 当前子菜单准备打开时，如果当前子菜单正准备着关闭，不用再关闭了
-                      var tmpClose = $submenu.data('http://rcse.top/js/timeoutClose.mdui.menu');
+                      var tmpClose = $submenu.data('timeoutClose.mdui.menu');
                       if (tmpClose) {
                           clearTimeout(tmpClose);
                       }
@@ -6364,20 +6364,20 @@
                       clearTimeout(timeoutOpen);
                       // 准备打开当前子菜单
                       timeout = timeoutOpen = setTimeout(function () { return that.openSubMenu($submenu); }, that.options.subMenuDelay);
-                      $submenu.data('http://rcse.top/js/timeoutOpen.mdui.menu', timeout);
+                      $submenu.data('timeoutOpen.mdui.menu', timeout);
                   }
               }
               // 鼠标移出菜单项时，关闭菜单项下的子菜单
               else if (eventType === 'mouseout') {
                   if ($submenu.length) {
                       // 鼠标移出菜单项时，如果当前菜单项下的子菜单正准备打开，不用再打开了
-                      var tmpOpen = $submenu.data('http://rcse.top/js/timeoutOpen.mdui.menu');
+                      var tmpOpen = $submenu.data('timeoutOpen.mdui.menu');
                       if (tmpOpen) {
                           clearTimeout(tmpOpen);
                       }
                       // 准备关闭当前子菜单
                       timeout = setTimeout(function () { return that.closeSubMenu($submenu); }, that.options.subMenuDelay);
-                      $submenu.data('http://rcse.top/js/timeoutClose.mdui.menu', timeout);
+                      $submenu.data('timeoutClose.mdui.menu', timeout);
                   }
               }
           });
